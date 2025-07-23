@@ -16,7 +16,7 @@
     <!-- Tautan ke file CSS Anda -->
     <link rel="stylesheet" href="dashboard.css">
 </head>
-<body>
+<body class="bg-gray-100">
 
     <div class="min-h-screen">
         <!-- Header -->
@@ -32,8 +32,29 @@
         </header>
 
         <!-- Konten Utama -->
-        <main>
-            <!-- Konten dashboard akan ditambahkan di sini nanti -->
+        <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+            <!-- Grid untuk Kartu Fitur -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Kartu Panduan Keamanan (Versi Sederhana) -->
+                <a href="fitur-security_guide/security_guide.html" class="block bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4">
+                            <!-- Ikon Perisai -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Panduan Keamanan</h3>
+                            <p class="text-gray-500 mt-1">Lihat tips dan praktik terbaik untuk keamanan web.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Anda bisa menambahkan kartu fitur lainnya di sini nanti -->
+
+            </div>
         </main>
     </div>
 

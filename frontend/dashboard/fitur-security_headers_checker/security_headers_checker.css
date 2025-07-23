@@ -1,0 +1,9 @@
+/* security_headers_checker.css */
+
+/* Menggunakan font Inter sebagai default untuk seluruh halaman */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6; /* Memberi warna latar belakang abu-abu muda */
+}
+
+/* Anda bisa menambahkan lebih banyak style kustom di sini jika diperlukan */

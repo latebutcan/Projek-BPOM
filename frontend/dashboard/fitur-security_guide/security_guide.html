@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Guide</title>
+    
+    <!-- Memuat Tailwind CSS dari CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Memuat Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tautan ke file CSS Anda -->
+    <link rel="stylesheet" href="security_guide.css">
+</head>
+<body>
+
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-indigo-600 text-white shadow-md">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Judul Dashboard -->
+                    <div class="flex items-center">
+                        <h1 class="text-xl font-bold">Security Dashboard</h1>
+                    </div>
+                    <!-- Tombol Kembali ke Dashboard -->
+                    <a href="dashboard.html" class="bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
+                        &larr; Kembali ke Dashboard
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Konten Utama -->
+        <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+            <!-- Judul Konten -->
+            <div class="text-center mb-8 pt-8">
+                <div class="inline-block bg-indigo-100 text-indigo-600 p-4 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5.002L10 18.451l7.834-13.449A11.954 11.954 0 0110 1.944zM10 4.069L4.028 14.155A9.957 9.957 0 0110 4.069zm5.972 10.086L10 4.069A9.957 9.957 0 0115.972 14.155z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mt-4">Panduan Keamanan</h2>
+                <p class="text-gray-500 mt-2">Tips dan praktik terbaik untuk mengamankan aplikasi web</p>
+            </div>
+
+            <!-- Filter dan Pencarian -->
+            <div class="flex flex-col sm:flex-row justify-between items-center mb-8 space-y-4 sm:space-y-0">
+                <!-- Input Pencarian -->
+                <div class="relative w-full sm:w-auto">
+                    <input type="text" placeholder="Cari panduan keamanan..." class="w-full sm:w-64 pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                </div>
+                <!-- Tombol Filter -->
+                <div class="flex items-center space-x-2">
+                    <button class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg">Semua</button>
+                    <button class="bg-white hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 border border-gray-300 rounded-lg">Headers</button>
+                    <button class="bg-white hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 border border-gray-300 rounded-lg">SSL/TLS</button>
+                    <button class="bg-white hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 border border-gray-300 rounded-lg">Authentication</button>
+                    <button class="bg-white hover:bg-gray-100 text-gray-700 font-semibold py-2 px-4 border border-gray-300 rounded-lg">Data Protection</button>
+                </div>
+            </div>
+
+            <!-- Grid Kartu Panduan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Kartu SSL/TLS Security -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">SSL/TLS Security</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Sertifikat SSL/TLS:</strong> Gunakan sertifikat yang valid</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>HTTPS Everywhere:</strong> Redirect semua HTTP ke HTTPS</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>TLS 1.2:</strong> Gunakan versi TLS terbaru</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>HSTS:</strong> Implementasikan HTTP Strict Transport Security</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Certificate Pinning:</strong> Pin certificate untuk keamanan ekstra</div></li>
+                    </ul>
+                </div>
+
+                <!-- Kartu Security Headers -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Security Headers</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Content-Security-Policy:</strong> Cegah XSS attacks</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>X-Frame-Options:</strong> Cegah clickjacking</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>X-Content-Type-Options:</strong> Cegah MIME sniffing</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Referrer-Policy:</strong> Kontrol informasi referrer</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Permissions-Policy:</strong> Batasi fitur browser</div></li>
+                    </ul>
+                </div>
+
+                <!-- Kartu Authentication -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Authentication</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Multi-factor authentication:</strong> Implementasikan MFA</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Password yang kuat:</strong> Gunakan password kompleks</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Session management:</strong> Kelola sesi dengan benar</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Session timeout:</strong> Set timeout yang sesuai</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Secure cookies:</strong> Gunakan secure cookies</div></li>
+                    </ul>
+                </div>
+
+                <!-- Kartu Data Protection -->
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-indigo-100 text-indigo-600 p-3 rounded-full mr-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Data Protection</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Enkripsi data sensitif:</strong> at rest dan in transit</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Input validation:</strong> Implementasikan validasi input</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Prepared statements:</strong> Gunakan prepared statements</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Regular backup:</strong> Backup data secara berkala</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span><div><strong>Limit data exposure:</strong> Batasi eksposur data</div></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Tautan ke file JavaScript Anda -->
+    <script src="security_guide.js" defer></script>
+</body>
+</html>

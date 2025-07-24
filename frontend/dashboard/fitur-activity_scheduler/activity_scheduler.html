@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Scheduler</title>
+    
+    <!-- Memuat Tailwind CSS dari CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Memuat Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tautan ke file CSS Anda -->
+    <link rel="stylesheet" href="activity_scheduler.css">
+</head>
+<body class="bg-gray-100">
+
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-indigo-600 text-white shadow-md">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <h1 class="text-xl font-bold">Security Dashboard</h1>
+                    </div>
+                    <a href="../dashboard.html" class="bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300">
+                        &larr; Kembali ke Dashboard
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Konten Utama -->
+        <main class="container mx-auto p-4 sm:p-6 lg:p-8">
+            <!-- Judul Konten -->
+            <div class="text-center mb-8 pt-8">
+                <div class="inline-block bg-indigo-100 text-indigo-600 p-4 rounded-full">
+                    <!-- Ikon Kalender -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mt-4">Activity Scheduler</h2>
+                <p class="text-gray-500 mt-2">Buat dan kelola jadwal kegiatan Anda.</p>
+            </div>
+
+            <!-- Form untuk menambah jadwal -->
+            <div class="bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Tambah Jadwal Baru</h3>
+                <form id="add-activity-form" class="space-y-4">
+                    <div>
+                        <label for="activity-name" class="block text-sm font-medium text-gray-700">Nama Kegiatan</label>
+                        <input type="text" id="activity-name" placeholder="Contoh: Rapat Tim Keamanan" required class="mt-1 w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="activity-date" class="block text-sm font-medium text-gray-700">Tanggal</label>
+                            <input type="date" id="activity-date" required class="mt-1 w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div>
+                            <label for="activity-time" class="block text-sm font-medium text-gray-700">Waktu</label>
+                            <input type="time" id="activity-time" required class="mt-1 w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg">Tambah Jadwal</button>
+                </form>
+            </div>
+            
+            <!-- Daftar Jadwal Kegiatan -->
+            <div class="bg-white p-6 mt-8 rounded-xl shadow-lg max-w-4xl mx-auto">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Jadwal Mendatang</h3>
+                <div id="activity-list" class="space-y-3">
+                    <!-- Daftar jadwal akan dimuat di sini oleh JavaScript -->
+                    <p id="loading-activities" class="text-gray-500">Memuat jadwal...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="activity_scheduler.js"></script>
+</body>
+</html>

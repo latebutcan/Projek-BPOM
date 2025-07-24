@@ -45,17 +45,28 @@
                     </svg>
                 </div>
                 <h2 class="text-3xl font-bold text-gray-800 mt-4">Security Headers Checker</h2>
-                <p class="text-gray-500 mt-2">Gunakan alat online gratis untuk menganalisis HTTP response headers situs Anda.</p>
+                <p class="text-gray-500 mt-2">Masukkan URL situs Anda untuk menganalisis HTTP response headers secara langsung.</p>
             </div>
 
-            <!-- Konten Penjelasan dan Tombol Aksi -->
-            <div class="bg-white p-8 rounded-xl shadow-lg max-w-2xl mx-auto text-center">
-                <p class="text-gray-600 mb-6">
-                    Klik tombol di bawah untuk membuka SecurityHeaders.com di tab baru. Masukkan URL situs Anda untuk mendapatkan laporan instan tentang konfigurasi security headers Anda dan pelajari cara memperbaikinya.
+            <!-- Form untuk Input URL -->
+            <div class="bg-white p-8 rounded-xl shadow-lg max-w-2xl mx-auto">
+                <form id="security-form" class="space-y-4">
+                    <div>
+                        <label for="url-input" class="block text-sm font-medium text-gray-700 mb-1 text-left">URL Situs Web</label>
+                        <input type="url" id="url-input" name="url" placeholder="https://contoh.com" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+                    </div>
+                    <button type="submit" id="check-button" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300 flex items-center justify-center">
+                        <!-- Icon SVG untuk loading, disembunyikan secara default -->
+                        <svg id="loading-spinner" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span id="button-text">Cek Sekarang</span>
+                    </button>
+                </form>
+                <p class="text-xs text-gray-500 mt-4 text-center">
+                    Anda akan diarahkan ke <code class="bg-gray-200 text-gray-700 rounded px-1">securityheaders.com</code> untuk melihat hasilnya di tab baru.
                 </p>
-                <a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300">
-                    Buka Security Headers Checker
-                </a>
             </div>
         </main>
     </div>

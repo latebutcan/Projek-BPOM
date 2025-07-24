@@ -51,10 +51,13 @@
             <div class="bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
                 <h3 class="text-lg font-bold text-gray-800 mb-4">Tambah Jadwal Baru</h3>
                 <form id="add-activity-form" class="space-y-4">
+                    <!-- Nama Kegiatan -->
                     <div>
                         <label for="activity-name" class="block text-sm font-medium text-gray-700">Nama Kegiatan</label>
                         <input type="text" id="activity-name" placeholder="Contoh: Rapat Tim Keamanan" required class="mt-1 w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
                     </div>
+
+                    <!-- Tanggal & Waktu -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label for="activity-date" class="block text-sm font-medium text-gray-700">Tanggal</label>
@@ -65,6 +68,35 @@
                             <input type="time" id="activity-time" required class="mt-1 w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
                         </div>
                     </div>
+
+                    <!-- Jenis Kegiatan & Lokasi/Platform -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="activity-type" class="block text-sm font-medium text-gray-700">Jenis Kegiatan</label>
+                            <select id="activity-type" required class="mt-1 w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                <option value="Online">Online</option>
+                                <option value="Offline">Offline</option>
+                                <option value="Hybrid">Hybrid</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="activity-location" class="block text-sm font-medium text-gray-700">Lokasi / Platform</label>
+                            <input type="text" id="activity-location" placeholder="Contoh: Ruang Rapat Lt. 5 / Zoom" required class="mt-1 w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                    </div>
+
+                    <!-- Link Absensi -->
+                    <div>
+                        <label for="activity-attendance" class="block text-sm font-medium text-gray-700">Link Absensi (Opsional)</label>
+                        <input type="url" id="activity-attendance" placeholder="https://" class="mt-1 w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+
+                    <!-- Deskripsi -->
+                    <div>
+                        <label for="activity-description" class="block text-sm font-medium text-gray-700">Deskripsi / Catatan</label>
+                        <textarea id="activity-description" rows="3" placeholder="Tulis catatan tambahan di sini..." class="mt-1 w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    </div>
+
                     <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg">Tambah Jadwal</button>
                 </form>
             </div>
@@ -72,7 +104,7 @@
             <!-- Daftar Jadwal Kegiatan -->
             <div class="bg-white p-6 mt-8 rounded-xl shadow-lg max-w-4xl mx-auto">
                 <h3 class="text-lg font-bold text-gray-800 mb-4">Jadwal Mendatang</h3>
-                <div id="activity-list" class="space-y-3">
+                <div id="activity-list" class="space-y-4">
                     <!-- Daftar jadwal akan dimuat di sini oleh JavaScript -->
                     <p id="loading-activities" class="text-gray-500">Memuat jadwal...</p>
                 </div>
